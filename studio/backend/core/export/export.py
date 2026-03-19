@@ -580,7 +580,9 @@ class ExportBackend:
                             dest = os.path.join(abs_save_dir, src.name)
                             if not os.path.exists(dest):
                                 shutil.move(str(src), dest)
-                                logger.info(f"Relocated GGUF: {src.name} → {abs_save_dir}/")
+                                logger.info(
+                                    f"Relocated GGUF: {src.name} → {abs_save_dir}/"
+                                )
                         shutil.rmtree(str(gguf_dir), ignore_errors = True)
                         logger.info(f"Cleaned up intermediate GGUF dir: {gguf_dir}")
 
